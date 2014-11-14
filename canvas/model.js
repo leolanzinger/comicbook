@@ -112,8 +112,8 @@ function model() {
 
 		var cur_z = panel.n_of_layers;
 		var new_z = 50 - 1;
-		panel.addCanvas(new_z);
-		var controller = new canvasController('panel-' + panel_index, this, new_z, panel_index)
+		panel.addCanvas(new_z, true);
+		var controller = new canvasController('panel-' + panel_index, this, new_z, panel_index);
 		panel.canvasControllerList.push(controller);
 		controller.createImage(filename);
 	}

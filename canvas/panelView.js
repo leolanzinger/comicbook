@@ -28,9 +28,15 @@ function panelView(id, x, y, width, height, model, index) {
 
 	/** Add canvas to this panel
 	*	@param {int} z_index - given z_index of last created canvas
+	*	@param {int} image - check if canvas it is image or not
 	*/
-	this.addCanvas = function(z_index) {
-		$('#'+ this.id).append('<canvas id="' +  this.id + '-canvas-' + z_index + '" class="canvas-layer" width="'+this.width+'" height="'+this.height+'" style="z-index: '+  z_index +'"></canvas>');	
+	this.addCanvas = function(z_index, image) {
+		if (!image) {
+			$('#'+ this.id).append('<canvas id="' +  this.id + '-canvas-' + z_index + '" class="canvas-layer" width="'+this.width+'" height="'+this.height+'" style="z-index: '+  z_index +'"></canvas>');	
+		}
+		else {
+			$('#'+ this.id).append('<canvas id="' +  this.id + '-canvas-' + z_index + '" class="image-layer canvas-layer" style="z-index: '+  z_index +'"></canvas>');	
+		}
 		var layer = document.getElementById(this.id);
 		this.layerList.push(layer);
 		this.n_of_layers = this.layerList.length;
@@ -76,11 +82,29 @@ function panelView(id, x, y, width, height, model, index) {
 
 	/** Triggers draggable state */
 	this.doTool = function() {
-		if (model.draggable) {
+		if (model.draggable && !model.resizable) {
 			this.draggable(true);
+			this.resizable(false);
 		}
-		else if (!model.draggable) {
+		else if (!model.draggable && !model.resizable) {
 			this.draggable(false);
+			this.resizable(false);
+		}
+		else if (!model.draggable && model.resizable) {
+			this.resizable(true);
+			this.draggable(false);
+		}
+	}
+
+	/** Triggers image resizable
+	*	@param {boolean} resizable_mode
+	*/
+	this.resizable = function(resizable_mode) {
+		if(resizable_mode) {
+			$('.image-layer').resizable({ disabled: false });
+		}
+		else {
+			$('.image-layer').resizable({ disabled: true });
 		}
 	}
 }

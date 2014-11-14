@@ -17,7 +17,7 @@ function pageTemplateController() {
 				
 				var panel = new panelView(data.templates[json_index].panels[i].id, data.templates[json_index].panels[i].x, data.templates[json_index].panels[i].y, data.templates[json_index].panels[i].width, data.templates[json_index].panels[i].height, model, i+1);
 				
-				panel.addCanvas(50);
+				panel.addCanvas(50, false);
 
 				panel.createCanvasController(data.templates[json_index].panels[i].id, model, 50, i+1);
 				

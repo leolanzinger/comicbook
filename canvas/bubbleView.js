@@ -50,7 +50,6 @@ function bubbleView(id, x, y, model) {
 		else if (!model.draggable && model.resizable) {
 			this.resizable(true);
 			this.draggable(false);
-			console.log("resizable");
 		}
 	}
 
