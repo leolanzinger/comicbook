@@ -1,0 +1,186 @@
+/*
+	Comic Book STYLESHEET
+	@author: Leonardo Lanzinger
+
+	Color palette:
+	• Teal[blue/gray] #009688
+	• Blue gray #607d8b
+	• Dark gray #212121
+	• Indigo blue #3f51b5
+	• Dark green #004943
+	• Very light gray #eceff1
+*/
+
+html, body {
+	margin: 0;
+	display: block;
+	position: relative;
+	font-family: 'Lato', helvetica, sans-serif;
+}
+
+body {
+	background-color: #009688;
+}
+
+div {
+	display: block;
+	position: relative;
+}
+
+canvas {
+	display: block;
+	position: absolute;
+}
+
+#container {
+	width: 100%;
+	height: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#container a {
+	color: white;
+	text-decoration: none;
+}
+
+#top-bar {
+	position: relative;
+	width: 100%;
+	height: 70px;
+}
+
+#open-menu {
+	position: absolute;
+	margin-left: 20px;
+	font-size: 44px;
+}
+
+#tools-menu {
+	margin: 0 auto;
+	position: relative;
+	width: 1000px;
+	color: white;
+}
+
+#tools-menu i {
+	position: relative;
+	float: right;
+	font-size: 30px;
+	margin-left: 12px;
+	line-height: 50px;
+}
+
+/*________________________________
+	SLIDING MENU:
+----------------------------------*/
+
+#sliding-menu {
+	background-color: #004943;
+}
+
+#sliding-menu .mm-header {
+	border: none;
+	height: 60px;
+	margin-bottom: 50px;
+}
+
+#sliding-menu .mm-title {
+	font-family: 'Pacifico', cursive;
+	color: white;
+	font-size: 30px;
+	line-height: 50px;
+	padding-top: 10px;
+}
+
+#sliding-menu .mm-list {
+	padding-top: 80px;
+}
+
+#sliding-menu a	{
+	font-size: 24px;
+	line-height: 42px;
+	font-weight: 100;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 1.9;
+}
+
+#sliding-menu ul {
+}
+
+.mm-menu .mm-list > li::after {
+	border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.template-link {
+	text-align: center;
+	font-style: bold;
+}
+
+/*________________________________
+	CANVAS
+
+	NB: for now let's keep a4 paper format (892px * 1263px) rounded to 900x1300
+----------------------------------*/
+#persistent {
+	/*width: 100%;*/
+	width: 900px;
+	padding: 50px;
+	height: 1300px;
+	margin: auto;
+	background-color: #eceff1;
+	box-shadow: 0px 0px 15px -3px #414141;
+}
+
+.canvas-panel {
+	-webkit-box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+  	box-sizing: border-box; 
+	background-color: #fff;
+	border: 1px solid #607d8b;
+}
+
+.canvas-layer {
+}
+
+/*_______________________________
+	HELPER CLASSES
+---------------------------------*/
+.pointable-cursor {
+	cursor: pointer;
+	cursor: hand;
+}
+
+.draggable-cursor {
+	cursor: move;
+}
+
+.resizable-cursor {
+	cursor:nesw-resize;
+}
+
+.image-cursor {
+	cursor:cell;
+}
+
+.pen-cursor {
+}
+
+.active-tool {
+	border-bottom: 2px solid #fff;
+}
+
+.bubble-background {
+	z-index: 99;
+	background-color: transparent;
+	background-image: url("graphics/graphic-tools/speech-bubble.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	border: none;
+}
+
+.bubble-panel {
+	height: 200px;
+	width: 200px;
+}

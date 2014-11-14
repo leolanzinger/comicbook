@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="Leonardo Lanzinger">
+		<title>Comic Book</title>
+
+		<!-- google fonts: Lato + Pacifico -->
+		<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Pacifico' type='text/css'>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400?1389981558" type="text/css">
+		
+		<!-- fontello icons -->
+		<link rel="stylesheet" href="graphics/icons/comicbook.css" type="text/css">
+
+		<!-- include jQuery libraries css -->
+		<link href="libraries/css/jquery.mmenu.css" type="text/css" rel="stylesheet" />
+  		<link href="libraries/css/jquery.mmenu.header.css" type="text/css" rel="stylesheet" />
+		<link href="libraries/css/jquery-ui.min.css" type="text/css" rel="stylesheet" />
+		<link href="libraries/css/jquery-ui.structure.min.css" type="text/css" rel="stylesheet" />
+
+		<!-- main stylesheet -->
+  		<link rel="stylesheet" href="style.css" type="text/css" />
+	</head>
+	<body>
+
+		<!-- lateral sliding menu -->
+		<nav id="sliding-menu">
+		   	<ul>
+		    	<!-- <li><a href="#">Select Project</a></li> -->
+		    	<li><a>Page template</a>
+		    		<ul>
+		    			<li><a class="template-link" href="#" onclick="canvas_model.template(0);return false;">1x1</a></li>
+		    			<li><a class="template-link" href="#" onclick="canvas_model.template(1);return false;">1x1</a></li>
+		    			<li><a class="template-link" href="#" onclick="canvas_model.template(2);return false;">2x2</a></li>
+		    			<li><a class="template-link" href="#" onclick="canvas_model.template(3);return false;">2x2</a></li>
+		    			<li><a class="template-link" href="#" onclick="canvas_model.template(4);return false;">3x2</a></li>
+		    			<li><a class="template-link" href="#" onclick="canvas_model.template(5);return false;">3x2x1x2</a></li>
+		    			<li><a class="template-link" href="#" onclick="canvas_model.template(6);return false;">3x1x1x2</a></li>
+		    			<li><a class="template-link" href="#" onclick="canvas_model.template(7);return false;">3x1</a></li>
+		    		</ul>
+		    	</li>
+		    	<!-- <li><a href="#">Export in Photoshop</a></li> -->
+		    	<!-- <li><a id="print_link" href="#">Print</a></li> -->
+		   	</ul>
+		</nav>
+
+		<!-- app main container -->
+		<div id="container">
+			<div id="top-bar">
+				<!-- slider menu button -->
+				<a id="open-menu" href="#sliding-menu">&#9776;</a>
+				<!-- tools menu -->
+				<div id="tools-menu">
+					<i id="tool-picture" class="icon-picture pointable-cursor"></i>
+					<i id="tool-move" class="icon-move pointable-cursor"></i>
+					<i id="tool-resize" class="icon-resize-full pointable-cursor"></i>
+					<i id="tool-bubble" class="icon-comment-empty pointable-cursor"></i>
+					<i id="tool-pen" class="icon-pencil pointable-cursor"></i>
+				</div>
+			</div>
+			<!-- persistent canvas is the paper sheet -->
+			<div id="persistent" class="panel" width="892" height="1263">
+				<!-- here goes the canvases -->			
+			</div>
+		</div>
+	
+
+	<!-- include JQuery scripts and javascript classes -->
+	<script src="libraries/js/jquery.js" type="text/javascript"></script>
+	<script src="libraries/js/jquery.mmenu.min.js" type="text/javascript"></script>
+	<script src="libraries/js/jquery.mmenu.header.min.js" type="text/javascript"></script>
+	<script src="libraries/js/jquery-ui.min.js" type="text/javascript"></script>
+	<script src="canvas/canvasController.js" type="text/javascript"></script>
+	<script src="canvas/toolController.js" type="text/javascript"></script>
+	<script src="canvas/panelView.js" type="text/javascript"></script>
+	<script src="canvas/bubbleView.js" type="text/javascript"></script>
+	<script src="canvas/templateController.js" type="text/javascript"></script>
+	<script src="canvas/model.js" type="text/javascript"></script>
+	<!-- run main function -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			//istantiate canvas model
+			canvas_model = new model();
+			canvas_model.init();
+			//add sliding menu
+		    $("#sliding-menu").mmenu({
+		      	header: {
+		      		add: true,
+		      		update: true,
+		      		title: 'Comic book'
+	      		}
+	    	});
+
+	    	//print menu
+	    	$('#print_link').on('click', function() {
+	    		$('#sliding-menu').mmenu().trigger("close.mm");
+		    	window.print();
+	    	});
+
+	   	});
+	</script>
+	</body>
+</html>

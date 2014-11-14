@@ -1,0 +1,125 @@
+{
+    "templates": [
+        {
+            "title" : "1x1",
+            "panels" : [
+                {
+                    "id" : "panel-1", "x" : "0", "y" : "0", "width" : "900", "height" : "1300"
+                }
+            ] 
+        },
+        {
+            "title" : "1x2",
+            "panels" : [
+                {
+                    "id" : "panel-1", "x" : "0", "y" : "0", "width" : "900", "height" : "645"
+                },
+                {
+                    "id" : "panel-2", "x" : "0", "y" : "655", "width" : "900", "height" : "645"
+                }
+            ] 
+        },
+        {
+            "title" : "2x1",
+            "panels" : [
+                {
+                    "id" : "panel-1", "x" : "0", "y" : "0", "width" : "445", "height" : "1300"
+                },
+                {
+                    "id" : "panel-2", "x" : "455", "y" : "0", "width" : "445", "height" : "1300"
+                }
+            ] 
+        },
+        {
+            "title" : "2x2",
+            "panels" : [
+                {
+                    "id" : "panel-1", "x" : "0", "y" : "0", "width" : "445", "height" : "645"
+                },
+                {
+                    "id" : "panel-2", "x" : "455", "y" : "0", "width" : "445", "height" : "645"
+                },
+                {
+                    "id" : "panel-3", "x" : "0", "y" : "655", "width" : "445", "height" : "645"
+                },
+                {
+                    "id" : "panel-4", "x" : "455", "y" : "655", "width" : "445", "height" : "645"
+                }
+            ] 
+        },
+        {
+            "title" : "3x2",
+            "panels" : [
+                {
+                    "id" : "panel-1", "x" : "0", "y" : "0", "width" : "445", "height" : "400"
+                },
+                {
+                    "id" : "panel-2", "x" : "455", "y" : "0", "width" : "445", "height" : "400"
+                },
+                {
+                    "id" : "panel-3", "x" : "0", "y" : "410", "width" : "445", "height" : "400"
+                },
+                {
+                    "id" : "panel-4", "x" : "455", "y" : "410", "width" : "445", "height" : "400"
+                },
+                {
+                    "id" : "panel-5", "x" : "0", "y" : "820", "width" : "445", "height" : "480"
+                },
+                {
+                    "id" : "panel-6", "x" : "455", "y" : "820", "width" : "445", "height" : "480"
+                }
+            ] 
+        },
+        {
+            "title" : "3x2x1x2",
+            "panels" : [
+                {
+                    "id" : "panel-1", "x" : "0", "y" : "0", "width" : "445", "height" : "400"
+                },
+                {
+                    "id" : "panel-2", "x" : "455", "y" : "0", "width" : "445", "height" : "400"
+                },
+                {
+                    "id" : "panel-3", "x" : "0", "y" : "410", "width" : "900", "height" : "400"
+                },
+                {
+                    "id" : "panel-4", "x" : "0", "y" : "820", "width" : "445", "height" : "480"
+                },
+                {
+                    "id" : "panel-5", "x" : "455", "y" : "820", "width" : "445", "height" : "480"
+                }
+            ] 
+        },
+        {
+            "title" : "3x1x1x2",
+            "panels" : [
+                {
+                    "id" : "panel-1", "x" : "0", "y" : "0", "width" : "900", "height" : "400"
+                },
+                {
+                    "id" : "panel-2", "x" : "0", "y" : "410", "width" : "900", "height" : "400"
+                },
+                {
+                    "id" : "panel-3", "x" : "0", "y" : "820", "width" : "445", "height" : "480"
+                },
+                {
+                    "id" : "panel-4", "x" : "455", "y" : "820", "width" : "445", "height" : "480"
+                }
+            ] 
+        },
+        {
+            "title" : "3x1",
+            "panels" : [
+                {
+                    "id" : "panel-1", "x" : "0", "y" : "0", "width" : "900", "height" : "400"
+                },
+                {
+                    "id" : "panel-2", "x" : "0", "y" : "410", "width" : "900", "height" : "400"
+                },
+                {
+                    "id" : "panel-3", "x" : "0", "y" : "820", "width" : "900", "height" : "480"
+                }
+            ] 
+        }
+    ]
+}
