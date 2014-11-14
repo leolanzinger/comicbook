@@ -25,8 +25,8 @@ Click on "add bubble" icon in the top toolbar to insert a speech bubble in the p
 ####6. Resize objects
 Click on the resize icon in the top toolbar to enable resizing.
 
-**IMPORTANT:** at this moment the application only supports resizing of speech bubbles.
+**IMPORTANT:** at this moment the application only supports resizing of speech bubbles and images.
 
 ##Documentation
 
-Classes documentation is available at **jsdoc/index.html**.
+Class documentation is available at **jsdoc/index.html**.

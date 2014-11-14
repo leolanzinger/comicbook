@@ -17,9 +17,11 @@ function model() {
 
 	toolController(this);
 
+	this.undoManager = new UndoManager();
+	this.objects = new Array();
+
 	/** Init function called once document is loaded: simply sets the cursor as drawing cursor */
 	this.init = function() {
-		// set pen cursor
 		for (var i = 0; i < this.panelList.length; i++) {
 			$('#' + this.panelList[i].id).addClass('pen-cursor');
 		}
