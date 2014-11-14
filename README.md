@@ -4,8 +4,9 @@
 
 ---
 
-Comic Book is a sketch app that lets your draw simple sketches on a comic book pages. You can choose from a variety of comic book page templates with different numbers of panels and layouts. You can simply draw on the panel or upload a picture and place it on a panel, then you can enhance it drawing on top of it. It's also possible to add comic strips bubbles and place them in the panels.
+Comic Book is a sketch app that lets your draw simple sketches on a comic book pages. You can choose from a variety of comic book page templates with different numbers of panels and layouts. You can simply draw on the panel or upload a picture and place it on a panel, then you can enhance it drawing on top of it. It's also possible to add comic strips bubbles and place them in the panels. An undo manager allows user to undo or redo actions in the application.
 
+![image](screenshot.png)
 
 ##Usage
 Open the file **index.html** in a web browser to start using the application. The software is compatible with any major browser and has been tested on a desktop and laptop environment. 
@@ -27,6 +28,22 @@ Click on the resize icon in the top toolbar to enable resizing.
 
 **IMPORTANT:** at this moment the application only supports resizing of speech bubbles and images.
 
+####7. Undo / Redo
+The user can undo or redo his actions by clicking on the top center undo tool bar. Clicking on the left arrow will result in an undo action, clicking on the right arrow will result in a redo action.
+
+**IMPORTANT:** at this moment the undo manager only works with drawing.
+
 ##Documentation
 
-Class documentation is available at **jsdoc/index.html**.
+Class documentation built with JSDoc is available at **jsdoc/index.html**. 
+Github repository of this project can be found at [**https://github.com/leolanzinger/comicbook**](https://github.com/leolanzinger/comicbook).
+
+##Credits
+
+- **JQuery**: [**https://github.com/jquery/jquery**](https://github.com/jquery/jquery)
+- **JQuery UI**: [**https://github.com/jquery/jquery-ui**](https://github.com/jquery/jquery-ui) - drag and resize methods
+- **Javascript UndoManager**: [**https://github.com/ArthurClemens/Javascript-Undo-Manager**](https://github.com/ArthurClemens/Javascript-Undo-Manager) - manage undo and redo function callbacks [not the actual undo and redo functions]
+- **JQuery MMenu**: [**http://mmenu.frebsite.nl**](http://mmenu.frebsite.nl) - sliding lateral menu
+- **JsDoc**: [**https://github.com/jsdoc3/jsdoc**](https://github.com/jsdoc3/jsdoc) - used to compile documentation
+- **Fontello**: [**http://fontello.com**](http://fontello.com) - icons
+- **Google Fonts**: [**http://www.google.com/fonts**](http://www.google.com/fonts) - fonts

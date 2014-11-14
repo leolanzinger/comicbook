@@ -71,6 +71,22 @@ canvas {
 	line-height: 50px;
 }
 
+#undo-menu {
+	left: 50%;
+	margin-left: -56px;
+	position: absolute;
+	width: 112px;
+	color: white;
+}
+
+#undo-menu i {
+	position: relative;
+	float: center;
+	font-size: 30px;
+	margin-left: 12px;
+	line-height: 50px;
+}
+
 /*________________________________
 	SLIDING MENU:
 ----------------------------------*/
@@ -116,6 +132,7 @@ canvas {
 .template-link {
 	text-align: center;
 	font-style: bold;
+	text-transform: lowercase !important;
 }
 
 /*________________________________

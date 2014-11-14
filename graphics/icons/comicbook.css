@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'comicbook';
-  src: url('comicbook.eot?79590268');
-  src: url('comicbook.eot?79590268#iefix') format('embedded-opentype'),
-       url('comicbook.woff?79590268') format('woff'),
-       url('comicbook.ttf?79590268') format('truetype'),
-       url('comicbook.svg?79590268#comicbook') format('svg');
+  src: url('comicbook.eot?60867943');
+  src: url('comicbook.eot?60867943#iefix') format('embedded-opentype'),
+       url('comicbook.woff?60867943') format('woff'),
+       url('comicbook.ttf?60867943') format('truetype'),
+       url('comicbook.svg?60867943#comicbook') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -14,7 +14,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'comicbook';
-    src: url('../font/comicbook.svg?79590268#comicbook') format('svg');
+    src: url('../font/comicbook.svg?60867943#comicbook') format('svg');
   }
 }
 */
@@ -55,3 +55,5 @@
 .icon-resize-full:before { content: '\e802'; } /* '' */
 .icon-comment-empty:before { content: '\e803'; } /* '' */
 .icon-picture:before { content: '\e804'; } /* '' */
+.icon-undo:before { content: '\e805'; } /* '' */
+.icon-redo:before { content: '\e806'; } /* '' */

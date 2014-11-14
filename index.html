@@ -49,6 +49,11 @@
 			<div id="top-bar">
 				<!-- slider menu button -->
 				<a id="open-menu" href="#sliding-menu">&#9776;</a>
+				<!-- undo manager menu -->
+				<div id="undo-menu">
+					<i id="tool-undo" class="icon-undo pointable-cursor"></i>
+					<i id="tool-redo" class="icon-redo pointable-cursor"></i>
+				</div>
 				<!-- tools menu -->
 				<div id="tools-menu">
 					<i id="tool-picture" class="icon-picture pointable-cursor"></i>
@@ -96,6 +101,16 @@
 	    	$('#print_link').on('click', function() {
 	    		$('#sliding-menu').mmenu().trigger("close.mm");
 		    	window.print();
+	    	});
+
+	    	//undo icon
+	    	$('#tool-undo').on('click', function() {
+	    		canvas_model.undoManager.undo();
+	    	});
+
+	    	//redo icon
+	    	$('#tool-redo').on('click', function() {
+	    		canvas_model.undoManager.redo();
 	    	});
 
 	   	});
