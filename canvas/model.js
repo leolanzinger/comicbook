@@ -1,14 +1,6 @@
-/* 
-	Model class for panels
-	@author: Leonardo Lanzinger
-
-	[A4 paper format (892px * 1263px)]
-	
-	for now let's use those dimensions:
-		• padding is 50px
-		• total width is 900
-		• total height is 1300
-		• leave 10px margin between each panel
+/**
+*	Model class for the panel system
+*	@constructor
 */
 function model() {
 
@@ -23,9 +15,9 @@ function model() {
 	this.templateController = new pageTemplateController();
 	this.templateController.createTemplate(4,this);
 
-	// call tool controller
 	toolController(this);
 
+	/** Init function called once document is loaded: simply sets the cursor as drawing cursor */
 	this.init = function() {
 		// set pen cursor
 		for (var i = 0; i < this.panelList.length; i++) {
@@ -33,10 +25,7 @@ function model() {
 		}
 	}
 
-	/*
-	*	Set different modes
-	*/
-
+	/** Set painting mode: drawing is enabled on canvases */
 	this.setPaintingMode = function() {
 		this.painting = true;
 		this.draggable = false;
@@ -53,6 +42,7 @@ function model() {
 		}
 	};
 
+	/** Set dragging mode: panels can be dragged and moved around the container */
 	this.setDraggableMode = function() {
 		this.painting = false;
 		this.draggable = true;
@@ -69,6 +59,7 @@ function model() {
 		}
 	};
 
+	/** Set resizing mode: bubbles can be resized */
 	this.setResizableMode = function() {
 		this.painting = false;
 		this.draggable = false;
@@ -85,6 +76,7 @@ function model() {
 		}
 	};
 
+	/** Set image mode: clicking on a panel will result in an image uploader */
 	this.setImageMode = function() {
 		this.painting = false;
 		this.draggable = false;
@@ -100,21 +92,24 @@ function model() {
 		}
 	}
 
-	// insert image
+	/** Open image uploader 
+	*	@param {int} panel_index - index of panel in panelList[] array
+	*/
 	this.addImageCanvas = function(panel_index) {
 		var panel = this.panelList[panel_index - 1];
-		// trigger input form
 		$('#upload-field-'+panel.id).trigger('click');
 	}
 
-	// handle image uploaded file
+	/** Handle image uploader result 
+	*	@param {string} files - retrieved files data
+	*	@param {int} panel_index - index of panel in panelList[] array
+	*/
 	this.handleFiles = function(files, panel_index) {
-		// get filename from input form
+
 		var panel = this.panelList[panel_index-1];
 		var form = document.getElementById('upload-field-'+panel.id);
 		var filename = form.value.replace(/C:\\fakepath\\/i, '')
 
-		// set new canvas and add image
 		var cur_z = panel.n_of_layers;
 		var new_z = 50 - 1;
 		panel.addCanvas(new_z);
@@ -123,29 +118,28 @@ function model() {
 		controller.createImage(filename);
 	}
 
-	// insert bubble as a new canvas
+	/** Add bubble to page */
 	this.createBubble = function() {
-		var panel_bubble = new bubbleView('panel-bubble-' + this.bubbleList.length, 100, 100, this, 99);
+		var panel_bubble = new bubbleView('panel-bubble-' + this.bubbleList.length, 100, 100, this);
 		this.bubbleList.push(panel_bubble);
 		panel_bubble.setBubble();
 	}
 
-	// create page from template
+	/** Create new page from template 
+	*	@param {int} index - template index in JSON array
+	*/
 	this.template = function(index) {
-		// empty arrays
+		
 		this.panelList = [];
 		this.bubbleList = [];
 
-		// remove all panels
+		
 		var persistent = document.getElementById("persistent");
 		while (persistent.firstChild) {
 		    persistent.removeChild(persistent.firstChild);
-		}
-
-		// create new panel template
+		}		
 		this.templateController.createTemplate(index,this);
 
-		// close sliding menu
 		$('#sliding-menu').mmenu().trigger("close.mm");
 	}
 }

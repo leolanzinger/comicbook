@@ -1,6 +1,9 @@
-/*
-	paintController class for each panel
-	@author: Leonardo Lanzinger
+/**
+*	Canvas controller class: manage drawing and image insertion
+*	@param {string} panel - panel id
+*	@param {Object} model - reference to model class
+*	@param {int} layer - canvas z-index
+*	@param {int} panel_index - panel z-index
 */
 function canvasController(panel, model, layer, panel_index) {
 
@@ -16,18 +19,16 @@ function canvasController(panel, model, layer, panel_index) {
 
 	var canvas = panel + '-canvas-' + layer;
 
-	// on click handler triggers image upload
+	/** onClick handles image insertion if system is in image mode */
 	$('#' + canvas).on('click', function() {
 		if (model.picture) {
 			model.addImageCanvas(panel_index);
 		}
 	});
 
-	// other click elements trigger drawing or move
+	/** mousedown event is handled to start drawing */
 	$('#' + canvas).on('mousedown', function(e){
-		//get proper offset of absolute element	  	
 	  	var offset = $(this).offset()
-		//painting mode
 	 	if (model.painting) {
 	 		paint = true;
 	  		addPaintClick(e.pageX - offset.left, e.pageY - offset.top);
@@ -35,23 +36,21 @@ function canvasController(panel, model, layer, panel_index) {
 		}
 	});
 
-	// move mouse while drawing
+	/** mousemove event is handled to draw the path */
 	$('#' + canvas).on('mousemove', function(e){
-		//get proper offset of absolute element
 	  	var offset = $(this).offset()
-	  	//painting mode
 	  	if(paint) {
 			addPaintClick(e.pageX - offset.left, e.pageY - offset.top, true);
 		    redraw(context_pers);
 	  	}
 	});
 
-	// release mouse
+	/** mouseup event is handled to end drawing */
 	$('#' + canvas).on('mouseup', function(e){
 		paint = false;
 	});
 
-	// leave canvas area
+	/** mouseleave event */
 	$('#' + canvas).on('mouseleave', function(e){
 		paint = false;
 	});
@@ -62,14 +61,20 @@ function canvasController(panel, model, layer, panel_index) {
 	var paint;
 	var context_pers = pers.getContext("2d");
 
-	// add paint click to array
+	/** Add click to path array
+	*	@param {int} x - x position of point
+	*	@param {int} y - y position of point
+	*	@param {boolean} painting - checks if point has been drawed or not
+	*/ 
 	function addPaintClick(x, y, painting) {
 		clickX.push(x);
 		clickY.push(y);
 		clickPaint.push(painting);
 	}
 
-	// drawing function
+	/** Draw function
+	*	@param {Context} context - 2d canvas drawing context
+	*/
 	function redraw(context){
 		context.strokeStyle = "#000";
 		context.lineJoin = "round";
@@ -90,7 +95,9 @@ function canvasController(panel, model, layer, panel_index) {
 		}
 	}
 
-	// create image and attach to canvas
+	/** Create image from filename and add it to canvas
+	*	@param {String} filename - image file name
+	*/
 	this.createImage = function(filename) {
 		var imageObj = new Image();
 

@@ -1,12 +1,16 @@
-/*
-	Page templates class
-	@author: Leonardo Lanzinger
+/**
+*	Template controller: template page layout manager
+*	@constructor
 */
 
 function pageTemplateController() {
 	this.width = 900;
 	this.height = 1300;
 
+	/** Retrieve template from JSON array and create panels accordingly
+	*	@param {int} json_index - index in JSON array
+	*	@param {Object} model - reference to model class
+	*/
 	this.createTemplate = function(json_index, model) {
 		$.getJSON( "canvas/templates.json").done( function(data) {
 			for(var i=0; i < data.templates[json_index].panels.length; i++) {
