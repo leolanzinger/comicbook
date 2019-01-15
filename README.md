@@ -1,6 +1,6 @@
-#Comic Book
-####ISP Assignment November 2014 - Université Paris-Sud
-######Leonardo Lanzinger
+# Comic Book
+#### ISP Assignment November 2014 - Université Paris-Sud
+###### Leonardo Lanzinger
 
 ---
 
